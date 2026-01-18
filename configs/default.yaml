@@ -1,0 +1,139 @@
+# Copy and modify this file for custom evaluation runs.
+
+# metadata
+benchmark:
+  name: "chimera-default"
+  version: "0.1.0"
+  description: "Default CHIMERA benchmark configuration"
+
+# Model configuration
+model:
+  # Model provider: "gemini", "openai", "anthropic", "local"
+  provider: "gemini"
+
+  # Model name (provider-specific)
+  name: "gemini-2.0-flash"
+
+  # Generation parameters
+  temperature: 0.0  # Use 0 for deterministic outputs in calibration
+  max_tokens: 2048
+  top_p: 1.0
+
+  # Request settings
+  timeout_seconds: 60
+  max_retries: 3
+  retry_delay_seconds: 1.0
+
+# Track configurations
+tracks:
+  # Track 1: Calibration Probing
+  calibration:
+    enabled: true
+    max_samples: 500
+    difficulty_levels: ["L1", "L2", "L3", "L4", "L5"]
+    categories:
+      - "factual"
+      - "reasoning"
+      - "numerical"
+      - "commonsense"
+
+  # Track 2: Error Detection
+  error_detection:
+    enabled: true
+    max_samples: 300
+    include_self_review: true
+    error_types:
+      - "factual"
+      - "logical"
+      - "arithmetic"
+      - "incomplete"
+
+  # Track 3: Knowledge Boundary Recognition
+  knowledge_boundary:
+    enabled: true
+    max_samples: 400
+    question_types:
+      - "answerable"
+      - "unanswerable_impossible"
+      - "unanswerable_specific"
+      - "obscure_facts"
+      - "fictional"
+
+  # Track 4: Self-Correction Under Perturbation
+  self_correction:
+    enabled: true
+    max_samples: 250
+    perturbation_types:
+      - "value_corruption"
+      - "step_removal"
+      - "logic_inversion"
+      - "premise_change"
+
+# Evaluation settings
+evaluation:
+  # Calibration metrics
+  n_bins: 15  # Number of bins for ECE calculation
+  bin_strategy: "uniform"  # "uniform" or "quantile"
+
+  # Statistical settings
+  bootstrap_samples: 1000
+  confidence_level: 0.95
+
+  # Thresholds
+  abstention_confidence_threshold: 0.3
+  error_detection_threshold: 0.5
+
+# Prompt templates
+prompts:
+  # Whether to include confidence elicitation
+  elicit_confidence: true
+
+  # Confidence format: "numeric" (0-100), "verbal" (low/medium/high), "both"
+  confidence_format: "numeric"
+
+  # Whether to request reasoning traces
+  include_reasoning: true
+
+  # System prompt additions
+  system_additions: |
+    When answering questions, please:
+    1. Provide your answer clearly
+    2. Express your confidence as a percentage (0-100%)
+    3. Briefly explain your reasoning
+
+# Output settings
+output:
+  # Results directory
+  results_dir: "results"
+
+  # Experiment naming
+  experiment_name: null  # Auto-generated if null
+  timestamp_format: "%Y%m%d_%H%M%S"
+
+  # What to save
+  save_raw_responses: true
+  save_parsed_responses: true
+  save_intermediate_results: true
+
+  # Report generation
+  generate_html_report: true
+  generate_markdown_report: true
+  generate_plots: true
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "rich"  # "rich" or "plain"
+  log_file: null  # Path to log file, or null for stdout only
+
+# Caching
+cache:
+  enabled: true
+  cache_dir: ".api_cache"
+  ttl_hours: 24
+
+# Rate limiting
+rate_limiting:
+  enabled: true
+  requests_per_minute: 60
+  tokens_per_minute: 100000
