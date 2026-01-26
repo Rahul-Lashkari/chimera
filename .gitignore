@@ -185,5 +185,5 @@ data/raw/
 data/processed/
 
 # Model weights
-models/
-!models/.gitkeep
+/models/
+!/models/.gitkeep
