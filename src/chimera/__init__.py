@@ -19,8 +19,64 @@ For more information, see the documentation at:
 https://github.com/Rahul-Lashkari/chimera
 """
 
+# Evaluation models
+from chimera.models.evaluation import (
+    CalibrationMetrics,
+    ConfidenceBin,
+    ErrorDetectionMetrics,
+    EvaluationResult,
+    KnowledgeBoundaryMetrics,
+    SelfCorrectionMetrics,
+    TrackResult,
+)
+
+# Response models
+from chimera.models.response import (
+    ConfidenceLevel,
+    ConfidenceScore,
+    ModelResponse,
+    ParsedAnswer,
+    ReasoningStep,
+    ReasoningTrace,
+    ResponseMetadata,
+)
+
+# Task models
+from chimera.models.task import (
+    AnswerType,
+    DifficultyLevel,
+    Task,
+    TaskCategory,
+    TaskMetadata,
+    TaskSet,
+    TrackType,
+)
 from chimera.version import __version__
 
 __all__ = [
     "__version__",
+    # Task models
+    "AnswerType",
+    "DifficultyLevel",
+    "Task",
+    "TaskCategory",
+    "TaskMetadata",
+    "TaskSet",
+    "TrackType",
+    # Response models
+    "ConfidenceLevel",
+    "ConfidenceScore",
+    "ModelResponse",
+    "ParsedAnswer",
+    "ReasoningStep",
+    "ReasoningTrace",
+    "ResponseMetadata",
+    # Evaluation models
+    "CalibrationMetrics",
+    "ConfidenceBin",
+    "ErrorDetectionMetrics",
+    "EvaluationResult",
+    "KnowledgeBoundaryMetrics",
+    "SelfCorrectionMetrics",
+    "TrackResult",
 ]
