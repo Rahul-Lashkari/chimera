@@ -20,6 +20,14 @@ https://github.com/Rahul-Lashkari/chimera
 """
 
 # Evaluation models
+# Generators
+from chimera.generators.base import BaseTaskGenerator, GeneratorConfig
+from chimera.generators.calibration import (
+    CalibrationGeneratorConfig,
+    CalibrationTaskGenerator,
+)
+from chimera.generators.difficulty import DifficultyStratifier, StratificationConfig
+from chimera.generators.templates import QuestionTemplate, TemplateRegistry
 from chimera.models.evaluation import (
     CalibrationMetrics,
     ConfidenceBin,
@@ -79,4 +87,13 @@ __all__ = [
     "KnowledgeBoundaryMetrics",
     "SelfCorrectionMetrics",
     "TrackResult",
+    # Generators
+    "BaseTaskGenerator",
+    "GeneratorConfig",
+    "CalibrationGeneratorConfig",
+    "CalibrationTaskGenerator",
+    "DifficultyStratifier",
+    "StratificationConfig",
+    "QuestionTemplate",
+    "TemplateRegistry",
 ]
