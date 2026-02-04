@@ -19,7 +19,6 @@ For more information, see the documentation at:
 https://github.com/Rahul-Lashkari/chimera
 """
 
-# Evaluation models
 # Generators
 from chimera.generators.base import BaseTaskGenerator, GeneratorConfig
 from chimera.generators.calibration import (
@@ -28,6 +27,25 @@ from chimera.generators.calibration import (
 )
 from chimera.generators.difficulty import DifficultyStratifier, StratificationConfig
 from chimera.generators.templates import QuestionTemplate, TemplateRegistry
+
+# Model interfaces
+from chimera.interfaces.base import (
+    BaseModelInterface,
+    GenerationResult,
+    ModelCapabilities,
+    ModelConfig,
+)
+from chimera.interfaces.gemini import GeminiConfig, GeminiModel
+from chimera.interfaces.openai import OpenAIConfig, OpenAIModel
+from chimera.interfaces.parsers import (
+    ConfidenceParser,
+    ParserConfig,
+    ResponseParser,
+    parse_confidence,
+    parse_response,
+)
+
+# Evaluation models
 from chimera.models.evaluation import (
     CalibrationMetrics,
     ConfidenceBin,
@@ -96,4 +114,18 @@ __all__ = [
     "StratificationConfig",
     "QuestionTemplate",
     "TemplateRegistry",
+    # Model interfaces
+    "BaseModelInterface",
+    "GenerationResult",
+    "ModelCapabilities",
+    "ModelConfig",
+    "GeminiConfig",
+    "GeminiModel",
+    "OpenAIConfig",
+    "OpenAIModel",
+    "ConfidenceParser",
+    "ParserConfig",
+    "ResponseParser",
+    "parse_confidence",
+    "parse_response",
 ]
