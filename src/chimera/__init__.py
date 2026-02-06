@@ -19,6 +19,7 @@ For more information, see the documentation at:
 https://github.com/Rahul-Lashkari/chimera
 """
 
+# isort: skip_file
 # Generators
 from chimera.generators.base import BaseTaskGenerator, GeneratorConfig
 from chimera.generators.calibration import (
@@ -43,6 +44,32 @@ from chimera.interfaces.parsers import (
     ResponseParser,
     parse_confidence,
     parse_response,
+)
+
+# Metrics
+from chimera.metrics.base import (
+    BaseMetric,
+    BinningStrategy,
+    MetricConfig,
+    MetricResult,
+)
+from chimera.metrics.base import (
+    CalibrationBin as MetricCalibrationBin,
+)
+from chimera.metrics.calibration import (
+    AdaptiveCalibrationError,
+    BrierScore,
+    CalibrationMetricsComputer,
+    CalibrationSummary,
+    ExpectedCalibrationError,
+    MaximumCalibrationError,
+    OverconfidenceMetrics,
+)
+from chimera.metrics.visualization import (
+    CalibrationCurve,
+    ConfidenceHistogram,
+    ReliabilityDiagram,
+    plot_calibration_summary,
 )
 
 # Evaluation models
@@ -128,4 +155,21 @@ __all__ = [
     "ResponseParser",
     "parse_confidence",
     "parse_response",
+    # Metrics
+    "BaseMetric",
+    "BinningStrategy",
+    "MetricCalibrationBin",
+    "MetricConfig",
+    "MetricResult",
+    "AdaptiveCalibrationError",
+    "BrierScore",
+    "CalibrationMetricsComputer",
+    "CalibrationSummary",
+    "ExpectedCalibrationError",
+    "MaximumCalibrationError",
+    "OverconfidenceMetrics",
+    "CalibrationCurve",
+    "ConfidenceHistogram",
+    "ReliabilityDiagram",
+    "plot_calibration_summary",
 ]
