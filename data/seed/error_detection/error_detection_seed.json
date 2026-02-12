@@ -1,0 +1,227 @@
+{
+  "version": "1.0",
+  "track": "error_detection",
+  "description": "Seed data for error detection tasks across multiple domains",
+  "tasks": [
+    {
+      "id": "ed_math_001",
+      "domain": "mathematics",
+      "difficulty": "easy",
+      "question": "What is 25% of 80?",
+      "correct_response": "25% of 80 is 20. To calculate this, multiply 80 by 0.25 (or divide 80 by 4).",
+      "metadata": {
+        "topic": "percentages",
+        "requires_computation": true
+      }
+    },
+    {
+      "id": "ed_math_002",
+      "domain": "mathematics",
+      "difficulty": "medium",
+      "question": "Solve for x: 2x + 7 = 15",
+      "correct_response": "To solve 2x + 7 = 15, subtract 7 from both sides to get 2x = 8, then divide both sides by 2 to get x = 4.",
+      "metadata": {
+        "topic": "algebra",
+        "requires_computation": true
+      }
+    },
+    {
+      "id": "ed_math_003",
+      "domain": "mathematics",
+      "difficulty": "medium",
+      "question": "What is the area of a rectangle with length 12 cm and width 5 cm?",
+      "correct_response": "The area of a rectangle is length × width. Therefore, the area is 12 cm × 5 cm = 60 square centimeters.",
+      "metadata": {
+        "topic": "geometry",
+        "requires_computation": true
+      }
+    },
+    {
+      "id": "ed_math_004",
+      "domain": "mathematics",
+      "difficulty": "hard",
+      "question": "If a car travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "correct_response": "Distance = Speed × Time. Therefore, distance = 60 km/h × 2.5 hours = 150 kilometers.",
+      "metadata": {
+        "topic": "rate problems",
+        "requires_computation": true
+      }
+    },
+    {
+      "id": "ed_science_001",
+      "domain": "physics",
+      "difficulty": "easy",
+      "question": "What is Newton's First Law of Motion?",
+      "correct_response": "Newton's First Law of Motion states that an object at rest stays at rest, and an object in motion stays in motion with the same speed and direction, unless acted upon by an unbalanced force. This is also known as the law of inertia.",
+      "metadata": {
+        "topic": "classical mechanics",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_science_002",
+      "domain": "physics",
+      "difficulty": "medium",
+      "question": "What is the boiling point of water at sea level in Celsius?",
+      "correct_response": "The boiling point of water at sea level is 100 degrees Celsius (or 212 degrees Fahrenheit). At this temperature, water transitions from liquid to gas phase.",
+      "metadata": {
+        "topic": "thermodynamics",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_science_003",
+      "domain": "chemistry",
+      "difficulty": "easy",
+      "question": "What is the chemical symbol for gold?",
+      "correct_response": "The chemical symbol for gold is Au, which comes from the Latin word 'aurum' meaning 'shining dawn'. Gold has atomic number 79 on the periodic table.",
+      "metadata": {
+        "topic": "periodic table",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_science_004",
+      "domain": "biology",
+      "difficulty": "medium",
+      "question": "What is photosynthesis?",
+      "correct_response": "Photosynthesis is the process by which plants, algae, and some bacteria convert sunlight, water, and carbon dioxide into glucose and oxygen. The chemical equation is: 6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂.",
+      "metadata": {
+        "topic": "plant biology",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_history_001",
+      "domain": "history",
+      "difficulty": "easy",
+      "question": "In what year did the American Declaration of Independence get signed?",
+      "correct_response": "The Declaration of Independence was signed on August 2, 1776, though it was adopted by the Continental Congress on July 4, 1776, which is why Independence Day is celebrated on that date.",
+      "metadata": {
+        "topic": "American history",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_history_002",
+      "domain": "history",
+      "difficulty": "medium",
+      "question": "Who was the first person to walk on the Moon?",
+      "correct_response": "Neil Armstrong was the first person to walk on the Moon on July 20, 1969, during the Apollo 11 mission. His famous words were 'That's one small step for man, one giant leap for mankind.'",
+      "metadata": {
+        "topic": "space exploration",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_history_003",
+      "domain": "history",
+      "difficulty": "medium",
+      "question": "When did World War I begin?",
+      "correct_response": "World War I began on July 28, 1914, when Austria-Hungary declared war on Serbia following the assassination of Archduke Franz Ferdinand on June 28, 1914, in Sarajevo.",
+      "metadata": {
+        "topic": "world wars",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_geography_001",
+      "domain": "geography",
+      "difficulty": "easy",
+      "question": "What is the largest ocean on Earth?",
+      "correct_response": "The Pacific Ocean is the largest ocean on Earth, covering approximately 165.2 million square kilometers (63.8 million square miles). It spans from the Arctic in the north to the Antarctic in the south.",
+      "metadata": {
+        "topic": "physical geography",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_geography_002",
+      "domain": "geography",
+      "difficulty": "medium",
+      "question": "What is the capital of Australia?",
+      "correct_response": "The capital of Australia is Canberra, not Sydney or Melbourne as many people assume. Canberra was purpose-built as the capital and is located in the Australian Capital Territory (ACT).",
+      "metadata": {
+        "topic": "political geography",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_geography_003",
+      "domain": "geography",
+      "difficulty": "hard",
+      "question": "What is the highest mountain in the world?",
+      "correct_response": "Mount Everest is the highest mountain in the world, with a peak elevation of 8,849 meters (29,032 feet) above sea level. It is located in the Himalayas on the border between Nepal and Tibet.",
+      "metadata": {
+        "topic": "physical geography",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_logic_001",
+      "domain": "logic",
+      "difficulty": "easy",
+      "question": "If all cats are mammals, and all mammals are animals, what can we conclude about cats?",
+      "correct_response": "We can conclude that all cats are animals. This follows from the transitive property: if A implies B, and B implies C, then A implies C. Since all cats are mammals and all mammals are animals, therefore all cats are animals.",
+      "metadata": {
+        "topic": "syllogisms",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_logic_002",
+      "domain": "logic",
+      "difficulty": "medium",
+      "question": "What is the next number in the sequence: 1, 1, 2, 3, 5, 8, 13, ?",
+      "correct_response": "The next number is 21. This is the Fibonacci sequence, where each number is the sum of the two preceding numbers: 13 + 8 = 21.",
+      "metadata": {
+        "topic": "sequences",
+        "requires_computation": true
+      }
+    },
+    {
+      "id": "ed_logic_003",
+      "domain": "logic",
+      "difficulty": "hard",
+      "question": "If it is raining, the ground is wet. The ground is wet. Can we conclude that it is raining?",
+      "correct_response": "No, we cannot conclude that it is raining. This is the logical fallacy of affirming the consequent. While rain causes wet ground, wet ground could have other causes (sprinklers, flooding, dew). We can only conclude that IF it is raining THEN the ground is wet, not the reverse.",
+      "metadata": {
+        "topic": "logical fallacies",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_cs_001",
+      "domain": "computer_science",
+      "difficulty": "medium",
+      "question": "What is the time complexity of binary search?",
+      "correct_response": "The time complexity of binary search is O(log n), where n is the number of elements in the sorted array. This is because binary search halves the search space with each comparison.",
+      "metadata": {
+        "topic": "algorithms",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_cs_002",
+      "domain": "computer_science",
+      "difficulty": "easy",
+      "question": "How many bits are in a byte?",
+      "correct_response": "There are 8 bits in a byte. A bit is the smallest unit of data in computing (0 or 1), while a byte can represent 256 different values (2^8 = 256).",
+      "metadata": {
+        "topic": "computer fundamentals",
+        "requires_computation": false
+      }
+    },
+    {
+      "id": "ed_cs_003",
+      "domain": "computer_science",
+      "difficulty": "hard",
+      "question": "What is a hash table and what is its average-case time complexity for lookup?",
+      "correct_response": "A hash table is a data structure that implements an associative array, mapping keys to values using a hash function. The average-case time complexity for lookup, insertion, and deletion is O(1), though worst-case is O(n) if all keys hash to the same bucket.",
+      "metadata": {
+        "topic": "data structures",
+        "requires_computation": false
+      }
+    }
+  ]
+}

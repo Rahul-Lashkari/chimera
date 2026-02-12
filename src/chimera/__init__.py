@@ -51,6 +51,19 @@ from chimera.generators.calibration import (
     CalibrationGeneratorConfig,
     CalibrationTaskGenerator,
 )
+from chimera.generators.error_detection import (
+    ErrorDetectionGeneratorConfig,
+    ErrorDetectionTaskGenerator,
+    ErrorDetectionTaskType,
+    ErrorSeverity,
+    SourceResponse,
+)
+from chimera.generators.error_injection import (
+    ErrorInjector,
+    ErrorType,
+    InjectedError,
+    InjectionConfig,
+)
 from chimera.generators.difficulty import DifficultyStratifier, StratificationConfig
 from chimera.generators.templates import QuestionTemplate, TemplateRegistry
 
@@ -95,6 +108,14 @@ from chimera.metrics.visualization import (
     ConfidenceHistogram,
     ReliabilityDiagram,
     plot_calibration_summary,
+)
+from chimera.metrics.error_detection import (
+    DetectionCalibrationMetrics,
+    DetectionOutcome,
+    DetectionResult,
+    ErrorDetectionMetrics as ErrorDetectionMetricsComputer,
+    ErrorDetectionMetricsConfig,
+    ErrorDetectionSummary,
 )
 
 # Evaluation models
@@ -162,6 +183,15 @@ __all__ = [
     "GeneratorConfig",
     "CalibrationGeneratorConfig",
     "CalibrationTaskGenerator",
+    "ErrorDetectionGeneratorConfig",
+    "ErrorDetectionTaskGenerator",
+    "ErrorDetectionTaskType",
+    "ErrorSeverity",
+    "SourceResponse",
+    "ErrorInjector",
+    "ErrorType",
+    "InjectedError",
+    "InjectionConfig",
     "DifficultyStratifier",
     "StratificationConfig",
     "QuestionTemplate",
@@ -197,6 +227,13 @@ __all__ = [
     "ConfidenceHistogram",
     "ReliabilityDiagram",
     "plot_calibration_summary",
+    # Error detection metrics
+    "DetectionCalibrationMetrics",
+    "DetectionOutcome",
+    "DetectionResult",
+    "ErrorDetectionMetricsComputer",
+    "ErrorDetectionMetricsConfig",
+    "ErrorDetectionSummary",
     # Runner
     "OutputFormat",
     "RunConfig",

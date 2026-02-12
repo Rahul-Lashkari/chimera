@@ -18,6 +18,19 @@ from chimera.generators.difficulty import (
     DifficultyStratifier,
     StratificationConfig,
 )
+from chimera.generators.error_detection import (
+    ErrorDetectionGeneratorConfig,
+    ErrorDetectionTaskGenerator,
+    ErrorDetectionTaskType,
+    ErrorSeverity,
+    SourceResponse,
+)
+from chimera.generators.error_injection import (
+    ErrorInjector,
+    ErrorType,
+    InjectedError,
+    InjectionConfig,
+)
 from chimera.generators.templates import (
     QuestionTemplate,
     TemplateRegistry,
@@ -30,6 +43,17 @@ __all__ = [
     # Calibration generator
     "CalibrationTaskGenerator",
     "CalibrationGeneratorConfig",
+    # Error detection generator
+    "ErrorDetectionTaskGenerator",
+    "ErrorDetectionGeneratorConfig",
+    "ErrorDetectionTaskType",
+    "ErrorSeverity",
+    "SourceResponse",
+    # Error injection
+    "ErrorInjector",
+    "ErrorType",
+    "InjectedError",
+    "InjectionConfig",
     # Templates
     "QuestionTemplate",
     "TemplateRegistry",

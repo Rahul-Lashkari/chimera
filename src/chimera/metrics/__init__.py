@@ -46,6 +46,14 @@ from chimera.metrics.calibration import (
     MaximumCalibrationError,
     OverconfidenceMetrics,
 )
+from chimera.metrics.error_detection import (
+    DetectionCalibrationMetrics,
+    DetectionOutcome,
+    DetectionResult,
+    ErrorDetectionMetrics,
+    ErrorDetectionMetricsConfig,
+    ErrorDetectionSummary,
+)
 from chimera.metrics.visualization import (
     CalibrationCurve,
     ConfidenceHistogram,
@@ -72,4 +80,11 @@ __all__ = [
     "ConfidenceHistogram",
     "ReliabilityDiagram",
     "plot_calibration_summary",
+    # Error detection metrics
+    "DetectionCalibrationMetrics",
+    "DetectionOutcome",
+    "DetectionResult",
+    "ErrorDetectionMetrics",
+    "ErrorDetectionMetricsConfig",
+    "ErrorDetectionSummary",
 ]
