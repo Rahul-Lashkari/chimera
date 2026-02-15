@@ -54,6 +54,15 @@ from chimera.metrics.error_detection import (
     ErrorDetectionMetricsConfig,
     ErrorDetectionSummary,
 )
+from chimera.metrics.knowledge_boundary import (
+    AnswerabilityClassifier,
+    BoundaryResult,
+    CategoryMetrics,
+    KnowledgeBoundaryMetrics,
+    KnowledgeBoundaryMetricsConfig,
+    KnowledgeBoundarySummary,
+    ResponseClassification,
+)
 from chimera.metrics.visualization import (
     CalibrationCurve,
     ConfidenceHistogram,
@@ -87,4 +96,12 @@ __all__ = [
     "ErrorDetectionMetrics",
     "ErrorDetectionMetricsConfig",
     "ErrorDetectionSummary",
+    # Knowledge boundary metrics
+    "AnswerabilityClassifier",
+    "BoundaryResult",
+    "CategoryMetrics",
+    "KnowledgeBoundaryMetrics",
+    "KnowledgeBoundaryMetricsConfig",
+    "KnowledgeBoundarySummary",
+    "ResponseClassification",
 ]

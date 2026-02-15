@@ -64,6 +64,13 @@ from chimera.generators.error_injection import (
     InjectedError,
     InjectionConfig,
 )
+from chimera.generators.knowledge_boundary import (
+    ExpectedResponse,
+    KnowledgeBoundaryGeneratorConfig,
+    KnowledgeBoundaryQuestion,
+    KnowledgeBoundaryTaskGenerator,
+    KnowledgeCategory,
+)
 from chimera.generators.difficulty import DifficultyStratifier, StratificationConfig
 from chimera.generators.templates import QuestionTemplate, TemplateRegistry
 
@@ -116,6 +123,15 @@ from chimera.metrics.error_detection import (
     ErrorDetectionMetrics as ErrorDetectionMetricsComputer,
     ErrorDetectionMetricsConfig,
     ErrorDetectionSummary,
+)
+from chimera.metrics.knowledge_boundary import (
+    AnswerabilityClassifier,
+    BoundaryResult,
+    CategoryMetrics,
+    KnowledgeBoundaryMetrics as KnowledgeBoundaryMetricsComputer,
+    KnowledgeBoundaryMetricsConfig,
+    KnowledgeBoundarySummary,
+    ResponseClassification,
 )
 
 # Evaluation models
@@ -196,6 +212,12 @@ __all__ = [
     "StratificationConfig",
     "QuestionTemplate",
     "TemplateRegistry",
+    # Knowledge boundary generator
+    "ExpectedResponse",
+    "KnowledgeBoundaryGeneratorConfig",
+    "KnowledgeBoundaryQuestion",
+    "KnowledgeBoundaryTaskGenerator",
+    "KnowledgeCategory",
     # Model interfaces
     "BaseModelInterface",
     "GenerationResult",
@@ -234,6 +256,14 @@ __all__ = [
     "ErrorDetectionMetricsComputer",
     "ErrorDetectionMetricsConfig",
     "ErrorDetectionSummary",
+    # Knowledge boundary metrics
+    "AnswerabilityClassifier",
+    "BoundaryResult",
+    "CategoryMetrics",
+    "KnowledgeBoundaryMetricsComputer",
+    "KnowledgeBoundaryMetricsConfig",
+    "KnowledgeBoundarySummary",
+    "ResponseClassification",
     # Runner
     "OutputFormat",
     "RunConfig",

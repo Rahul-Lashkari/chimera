@@ -4,8 +4,8 @@ This module provides generators for creating evaluation tasks
 across all four CHIMERA tracks:
 
 - CalibrationTaskGenerator: Generates calibration probing tasks
-- ErrorDetectionTaskGenerator: Generates error detection tasks (future)
-- KnowledgeBoundaryTaskGenerator: Generates knowledge boundary tasks (future)
+- ErrorDetectionTaskGenerator: Generates error detection tasks
+- KnowledgeBoundaryTaskGenerator: Generates knowledge boundary tasks
 - SelfCorrectionTaskGenerator: Generates self-correction tasks (future)
 """
 
@@ -31,6 +31,13 @@ from chimera.generators.error_injection import (
     InjectedError,
     InjectionConfig,
 )
+from chimera.generators.knowledge_boundary import (
+    ExpectedResponse,
+    KnowledgeBoundaryGeneratorConfig,
+    KnowledgeBoundaryQuestion,
+    KnowledgeBoundaryTaskGenerator,
+    KnowledgeCategory,
+)
 from chimera.generators.templates import (
     QuestionTemplate,
     TemplateRegistry,
@@ -54,6 +61,12 @@ __all__ = [
     "ErrorType",
     "InjectedError",
     "InjectionConfig",
+    # Knowledge boundary generator
+    "ExpectedResponse",
+    "KnowledgeBoundaryGeneratorConfig",
+    "KnowledgeBoundaryQuestion",
+    "KnowledgeBoundaryTaskGenerator",
+    "KnowledgeCategory",
     # Templates
     "QuestionTemplate",
     "TemplateRegistry",
