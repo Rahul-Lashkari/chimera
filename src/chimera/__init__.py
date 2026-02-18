@@ -74,6 +74,9 @@ from chimera.generators.knowledge_boundary import (
 from chimera.generators.difficulty import DifficultyStratifier, StratificationConfig
 from chimera.generators.templates import QuestionTemplate, TemplateRegistry
 
+# CLI
+from chimera.cli import cli
+
 # Model interfaces
 from chimera.interfaces.base import (
     BaseModelInterface,
@@ -279,4 +282,6 @@ __all__ = [
     "ReportSection",
     "export_report",
     "load_report",
+    # CLI
+    "cli",
 ]
