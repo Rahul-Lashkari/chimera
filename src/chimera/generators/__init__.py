@@ -6,7 +6,7 @@ across all four CHIMERA tracks:
 - CalibrationTaskGenerator: Generates calibration probing tasks
 - ErrorDetectionTaskGenerator: Generates error detection tasks
 - KnowledgeBoundaryTaskGenerator: Generates knowledge boundary tasks
-- SelfCorrectionTaskGenerator: Generates self-correction tasks (future)
+- SelfCorrectionTaskGenerator: Generates self-correction tasks
 """
 
 from chimera.generators.base import BaseTaskGenerator, GeneratorConfig
@@ -38,6 +38,13 @@ from chimera.generators.knowledge_boundary import (
     KnowledgeBoundaryTaskGenerator,
     KnowledgeCategory,
 )
+from chimera.generators.self_correction import (
+    CorrectionExpectation,
+    CorruptionType,
+    ReasoningTrace,
+    SelfCorrectionGeneratorConfig,
+    SelfCorrectionTaskGenerator,
+)
 from chimera.generators.templates import (
     QuestionTemplate,
     TemplateRegistry,
@@ -67,6 +74,12 @@ __all__ = [
     "KnowledgeBoundaryQuestion",
     "KnowledgeBoundaryTaskGenerator",
     "KnowledgeCategory",
+    # Self-correction generator
+    "CorrectionExpectation",
+    "CorruptionType",
+    "ReasoningTrace",
+    "SelfCorrectionGeneratorConfig",
+    "SelfCorrectionTaskGenerator",
     # Templates
     "QuestionTemplate",
     "TemplateRegistry",

@@ -71,6 +71,13 @@ from chimera.generators.knowledge_boundary import (
     KnowledgeBoundaryTaskGenerator,
     KnowledgeCategory,
 )
+from chimera.generators.self_correction import (
+    CorrectionExpectation,
+    CorruptionType,
+    ReasoningTrace as SelfCorrectionReasoningTrace,
+    SelfCorrectionGeneratorConfig,
+    SelfCorrectionTaskGenerator,
+)
 from chimera.generators.difficulty import DifficultyStratifier, StratificationConfig
 from chimera.generators.templates import QuestionTemplate, TemplateRegistry
 
@@ -135,6 +142,16 @@ from chimera.metrics.knowledge_boundary import (
     KnowledgeBoundaryMetricsConfig,
     KnowledgeBoundarySummary,
     ResponseClassification,
+)
+from chimera.metrics.self_correction import (
+    CorrectionEvaluator,
+    CorrectionQuality,
+    DetectionEvaluator,
+    DetectionResult as SelfCorrectionDetectionResult,
+    SelfCorrectionMetricsComputer,
+    SelfCorrectionMetricsConfig,
+    SelfCorrectionResult,
+    SelfCorrectionSummary,
 )
 
 # Evaluation models
@@ -221,6 +238,12 @@ __all__ = [
     "KnowledgeBoundaryQuestion",
     "KnowledgeBoundaryTaskGenerator",
     "KnowledgeCategory",
+    # Self-correction generator
+    "CorrectionExpectation",
+    "CorruptionType",
+    "SelfCorrectionReasoningTrace",
+    "SelfCorrectionGeneratorConfig",
+    "SelfCorrectionTaskGenerator",
     # Model interfaces
     "BaseModelInterface",
     "GenerationResult",
@@ -267,6 +290,15 @@ __all__ = [
     "KnowledgeBoundaryMetricsConfig",
     "KnowledgeBoundarySummary",
     "ResponseClassification",
+    # Self-correction metrics
+    "CorrectionEvaluator",
+    "CorrectionQuality",
+    "DetectionEvaluator",
+    "SelfCorrectionDetectionResult",
+    "SelfCorrectionMetricsComputer",
+    "SelfCorrectionMetricsConfig",
+    "SelfCorrectionResult",
+    "SelfCorrectionSummary",
     # Runner
     "OutputFormat",
     "RunConfig",

@@ -469,6 +469,10 @@ def generate(
             KnowledgeBoundaryGeneratorConfig,
             KnowledgeBoundaryTaskGenerator,
         )
+        from chimera.generators.self_correction import (
+            SelfCorrectionGeneratorConfig,
+            SelfCorrectionTaskGenerator,
+        )
         from chimera.models.task import Task
 
         tasks: list[Task] = []
@@ -488,8 +492,10 @@ def generate(
             kb_task_set = kb_generator.generate()
             tasks = kb_task_set.tasks
         elif track == "self_correction":
-            console.print("[yellow]Self-correction track generation coming soon[/yellow]")
-            return
+            sc_config = SelfCorrectionGeneratorConfig(n_tasks=n_tasks, seed=seed)
+            sc_generator = SelfCorrectionTaskGenerator(sc_config)
+            sc_task_set = sc_generator.generate()
+            tasks = sc_task_set.tasks
         else:
             console.print(f"[red]Unknown track: {track}[/red]")
             sys.exit(1)

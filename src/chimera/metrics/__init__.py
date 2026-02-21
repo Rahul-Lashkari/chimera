@@ -63,6 +63,18 @@ from chimera.metrics.knowledge_boundary import (
     KnowledgeBoundarySummary,
     ResponseClassification,
 )
+from chimera.metrics.self_correction import (
+    CorrectionEvaluator,
+    CorrectionQuality,
+    DetectionEvaluator,
+)
+from chimera.metrics.self_correction import DetectionResult as SelfCorrectionDetectionResult
+from chimera.metrics.self_correction import (
+    SelfCorrectionMetricsComputer,
+    SelfCorrectionMetricsConfig,
+    SelfCorrectionResult,
+    SelfCorrectionSummary,
+)
 from chimera.metrics.visualization import (
     CalibrationCurve,
     ConfidenceHistogram,
@@ -104,4 +116,13 @@ __all__ = [
     "KnowledgeBoundaryMetricsConfig",
     "KnowledgeBoundarySummary",
     "ResponseClassification",
+    # Self-correction metrics
+    "CorrectionEvaluator",
+    "CorrectionQuality",
+    "DetectionEvaluator",
+    "SelfCorrectionDetectionResult",
+    "SelfCorrectionMetricsComputer",
+    "SelfCorrectionMetricsConfig",
+    "SelfCorrectionResult",
+    "SelfCorrectionSummary",
 ]
