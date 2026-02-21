@@ -9,6 +9,7 @@ This module defines the core task structures used across all evaluation tracks:
 from collections.abc import Iterator
 from datetime import datetime
 from enum import Enum
+from typing import Any
 from uuid import UUID, uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
@@ -107,6 +108,10 @@ class TaskMetadata(BaseModel):
     notes: str | None = Field(
         default=None,
         description="Optional notes about the task",
+    )
+    additional_data: dict[str, Any] = Field(
+        default_factory=dict,
+        description="Additional track-specific metadata",
     )
 
 
