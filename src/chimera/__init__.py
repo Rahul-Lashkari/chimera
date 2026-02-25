@@ -84,6 +84,21 @@ from chimera.generators.templates import QuestionTemplate, TemplateRegistry
 # CLI
 from chimera.cli import cli
 
+# Evaluation pipeline
+from chimera.evaluation import (
+    CrossTrackAggregator,
+    CrossTrackSummary,
+    EvaluationPipeline,
+    EvaluationResult as PipelineEvaluationResult,
+    ModelComparison,
+    ModelRanking,
+    PerformanceDelta,
+    PipelineConfig,
+    PipelineStage,
+    TrackCorrelation,
+    TrackEvaluation,
+)
+
 # Model interfaces
 from chimera.interfaces.base import (
     BaseModelInterface,
@@ -314,6 +329,18 @@ __all__ = [
     "ReportSection",
     "export_report",
     "load_report",
+    # Evaluation pipeline
+    "CrossTrackAggregator",
+    "CrossTrackSummary",
+    "EvaluationPipeline",
+    "PipelineEvaluationResult",
+    "ModelComparison",
+    "ModelRanking",
+    "PerformanceDelta",
+    "PipelineConfig",
+    "PipelineStage",
+    "TrackCorrelation",
+    "TrackEvaluation",
     # CLI
     "cli",
 ]
