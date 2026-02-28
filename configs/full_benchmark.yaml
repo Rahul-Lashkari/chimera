@@ -1,0 +1,133 @@
+# Full Benchmark Configuration
+# Comprehensive evaluation across all tracks with maximum samples
+
+benchmark:
+  name: "chimera-full"
+  version: "0.1.0"
+  description: "Complete CHIMERA benchmark with all tracks at full scale"
+
+model:
+  # Override via environment or CLI
+  provider: "${CHIMERA_MODEL_PROVIDER:gemini}"
+  name: "${CHIMERA_MODEL_NAME:gemini-2.0-flash}"
+  
+  temperature: 0.0
+  max_tokens: 4096
+  top_p: 1.0
+  
+  timeout_seconds: 120
+  max_retries: 5
+  retry_delay_seconds: 2.0
+
+tracks:
+  # Track 1: Calibration Probing
+  # Tests confidence calibration across domains
+  calibration:
+    enabled: true
+    max_samples: 1000  # Full scale
+    difficulty_levels: ["L1", "L2", "L3", "L4", "L5"]
+    categories:
+      - "factual"
+      - "reasoning"
+      - "numerical"
+      - "commonsense"
+      - "scientific"
+      - "historical"
+
+  # Track 2: Error Detection
+  # Tests self-error identification capabilities
+  error_detection:
+    enabled: true
+    max_samples: 600  # Full scale
+    include_self_review: true
+    error_types:
+      - "factual"
+      - "logical"
+      - "arithmetic"
+      - "incomplete"
+      - "hallucination"
+      - "temporal"
+      - "magnitude"
+      - "computational"
+
+  # Track 3: Knowledge Boundary Recognition
+  # Tests ability to recognize knowledge limits
+  knowledge_boundary:
+    enabled: true
+    max_samples: 800  # Full scale
+    question_types:
+      - "answerable"
+      - "unanswerable_impossible"
+      - "unanswerable_specific"
+      - "obscure_facts"
+      - "fictional"
+      - "future_events"
+      - "personal_private"
+
+  # Track 4: Self-Correction Under Perturbation
+  # Tests reasoning correction capabilities
+  self_correction:
+    enabled: true
+    max_samples: 500  # Full scale
+    perturbation_types:
+      - "value_corruption"
+      - "step_removal"
+      - "logic_inversion"
+      - "premise_change"
+      - "unit_error"
+      - "sign_flip"
+
+evaluation:
+  # Calibration metrics
+  n_bins: 20  # More bins for finer granularity
+  bin_strategy: "uniform"
+  
+  # Statistical settings - higher samples for production
+  bootstrap_samples: 5000
+  confidence_level: 0.95
+  
+  # Thresholds
+  abstention_confidence_threshold: 0.3
+  error_detection_threshold: 0.5
+
+prompts:
+  elicit_confidence: true
+  confidence_format: "numeric"
+  include_reasoning: true
+  system_additions: |
+    You are participating in a benchmark evaluation. Please:
+    1. Answer each question to the best of your ability
+    2. Express your confidence as a precise percentage (0-100%)
+    3. Provide clear reasoning for your answer
+    4. Acknowledge when you are uncertain or don't know
+    5. Do not refuse to answer - provide your best attempt
+
+output:
+  results_dir: "${CHIMERA_OUTPUT_DIR:results/full_benchmark}"
+  experiment_name: null
+  timestamp_format: "%Y%m%d_%H%M%S"
+  
+  # Save everything for full runs
+  save_raw_responses: true
+  save_parsed_responses: true
+  save_intermediate_results: true
+  
+  # Generate all reports
+  generate_html_report: true
+  generate_markdown_report: true
+  generate_plots: true
+
+logging:
+  level: "${CHIMERA_LOG_LEVEL:INFO}"
+  format: "rich"
+  log_file: "logs/full_benchmark.log"
+
+cache:
+  enabled: true
+  cache_dir: ".api_cache"
+  ttl_hours: 168  # 1 week for full runs
+
+rate_limiting:
+  enabled: true
+  requests_per_minute: 60
+  tokens_per_minute: 100000
