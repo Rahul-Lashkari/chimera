@@ -58,6 +58,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
   - admonition
   - pymdownx.details
   - attr_list
@@ -66,23 +68,28 @@ markdown_extensions:
   - toc:
       permalink: true
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
 nav:
-  - Home: README.md
+  - Home: index.md
   - Getting Started:
     - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quickstart.md
+    - Quick Start: quickstart.md
+    - Configuration: configuration.md
+    - CLI Reference: cli_reference.md
   - Concepts:
     - Calibration: concepts/calibration.md
     - Introspection: concepts/introspection.md
     - Metrics: concepts/metrics.md
   - API Reference:
     - Models: api/models.md
-    - Datasets: api/datasets.md
+    - Generators: api/generators.md
     - Evaluation: api/evaluation.md
   - Tutorials:
-    - First Evaluation: tutorials/first-evaluation.md
-    - Custom Tasks: tutorials/custom-tasks.md
-  - Configuration: configuration.md
+    - Custom Tasks: tutorials/custom_tasks.md
+    - Model Comparison: tutorials/model_comparison.md
   - Contributing: ../CONTRIBUTING.md
 
 extra:
